@@ -109,8 +109,38 @@ fig10 = scatter10.get_figure()
 fig10.savefig('fig10.png')
 
 
+sns.distplot(df_train['SalePrice'],fit=norm);
+fig11 = plt.figure()
+res = stats.probplot(df_train['SalePrice'],plot=plt)
+fig11.savefig('fig11.png')
+#fig12 = plt.figure()
+#fig12.savefig('fig12.png')
+
+df_train['SalePrice'] = np.log(df_train['SalePrice'])
+
+sns.distplot(df_train['SalePrice'],fit=norm);
+fig12 = plt.figure()
+res = stats.probplot(df_train['SalePrice'],plot=plt)
+fig12.savefig('fig12.png')
 
 
+dist13 = sns.distplot(df_train['GrLivArea'],fit=norm);
+fig13 = dist13.get_figure()
+fig13.savefig('fig13.png')
 
+fig14 = plt.figure()
+res = stats.probplot(df_train['GrLivArea'],plot=plt)
+fig14.savefig('fig14.png')
 
+df_train['GrLivArea'] = np.log(df_train['GrLivArea'])
+
+dist15 = sns.distplot(df_train['GrLivArea'],fit=norm);
+#fig15 = plt.figure()
+fig15 = dist15.get_figure()
+fig15.savefig('fig15.png')
+
+res = stats.probplot(df_train['GrLivArea'],plot=plt)
+#fig16 = res.get_figure()
+plt.savefig('fig16.png')
+#fig16.savefig('fig16.png')
 
